@@ -10,29 +10,23 @@ print(sys.executable)
 
 # In[2]:
 
+import os
 
-get_ipython().system('"/common/software/install/migrated/pytorch/1.2_python3.7/bin/python" -m pip install --quiet --user gensim ace_tools_open gdown')
+
+# In[4]:
+# #### Download/Load Analogy Questions
+
+os.system('curl -o questions-words.txt http://download.tensorflow.org/data/questions-words.txt')
 
 
-# In[3]:
-
+# In[]
 
 from gensim.models import KeyedVectors
 
 import numpy as np
 import pandas as pd
 import ace_tools_open as tools
-import os
 import gdown
-
-
-# #### Download/Load Analogy Questions
-
-# In[4]:
-
-
-get_ipython().system('wget http://download.tensorflow.org/data/questions-words.txt -O questions-words.txt')
-
 
 # #### Parse the Analogy Questions
 
@@ -864,4 +858,3 @@ results_df = run_all_experiments(
 )
 
 print(f"Results for '{section_name}' saved!")
-
