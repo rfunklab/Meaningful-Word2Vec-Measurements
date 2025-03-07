@@ -20,10 +20,13 @@ The implementation is based on replicating the methodology from Mikolov's Word2V
 
 ### Install Dependencies
 
+Note: ```ace_tools_open``` is required for running the new_wordvec_measurement.py but is not included in requirements.txt. Please install it separately.
+
 Run the following command to install the required Python libraries:
 
 ```bash
 pip install -r requirements.txt
+pip install ace_tools_open
 ```
 
 ### Download the Word2Vec Model
