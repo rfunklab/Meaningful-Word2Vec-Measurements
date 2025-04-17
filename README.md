@@ -43,7 +43,7 @@ wget -O GoogleNews-vectors-negative300.bin.gz https://s3.amazonaws.com/dl4j-dist
 To test the analogy tasks with the implemented distance measures, execute:
 
 ```bash
-python New_Word2Vec_Measurements.py
+python new_word2vec_measurements.py
 ```
 
 ### Evaluation Metrics
