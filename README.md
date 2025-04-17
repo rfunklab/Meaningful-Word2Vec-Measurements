@@ -59,7 +59,7 @@ It evaluates performance across multiple analogy categories and saves results to
 
 ### Outputs
 
-Results are saved in the ```results_per_section/``` directory:
+Results are saved (as .gz files) in the ```results_per_section/``` directory:
 
 - ```capital-common-countries```
 - ```capital-world```
@@ -76,10 +76,15 @@ Results are saved in the ```results_per_section/``` directory:
 - ```gram8-plural```
 - ```gram9-plural-verbs```
 
+To convert the .gz files to .csv files, please run the following line: 
+```bash
+python convert_gz_to_csv.py
+```
+
 Each csv file contains:
 
-| word1  | word2  | word3  | true_word  | candidate_1  | candidate_2  | ... | overall_accuracy |
-|--------|--------|--------|------------|--------------|--------------|----|------------------|
+| word1  | word2  | word3  | true_word  | candidate_1  | ...  | freq_subset  | rcond  | measure  | overall_accuracy  |
+|--------|--------|--------|------------|--------------|------|--------------|--------|----------|-------------------|
 
 
 ### Customizing Parameters
