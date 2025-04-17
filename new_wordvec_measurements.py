@@ -335,9 +335,9 @@ def run_all_experiments(
     measure_types: list,
     build_cov_inverse_fn,
     evaluate_fn,
-    out_csv: str = "final_results.csv",
+    out_csv: str,
     out_dir: str = ".",
-    top_k: int = 10
+    top_k: int
 ) -> "pd.DataFrame":
     """
     Runs analogy-based evaluations on word embeddings using multiple 
@@ -788,6 +788,31 @@ print(f"Results for '{section_name}' saved!")
 # In[ ]:
 
 
+# Run for section: gram6-nationality-adjective
+section_name = "gram6-nationality-adjective"
+questions = sections[section_name]
+
+print(f"Processing section: {section_name} ({len(questions)} questions)")
+
+results_df = run_all_experiments(
+    model=model,
+    questions=questions,
+    freq_subsets=freq_subs,
+    rcond_values=rc_vals,
+    measure_types=meas_types,
+    build_cov_inverse_fn=build_covariance_inverse,
+    evaluate_fn=evaluate_analogies,
+    out_csv="gram6_nationality_adjective_results.csv",
+    out_dir="results_per_section",
+    top_k=10
+)
+
+print(f"Results for '{section_name}' saved!")
+
+
+# In[ ]:
+
+
 # Run for section: gram7-past-tense
 section_name = "gram7-past-tense"
 questions = sections[section_name]
@@ -838,8 +863,8 @@ print(f"Results for '{section_name}' saved!")
 # In[ ]:
 
 
-# Run for section: gram9-plural-verbs
-section_name = "gram9-plural-verbs"
+# Run for section: gram8-plural-verbs
+section_name = "gram8-plural-verbs"
 questions = sections[section_name]
 
 print(f"Processing section: {section_name} ({len(questions)} questions)")
@@ -852,7 +877,7 @@ results_df = run_all_experiments(
     measure_types=meas_types,
     build_cov_inverse_fn=build_covariance_inverse,
     evaluate_fn=evaluate_analogies,
-    out_csv="gram9_plural_verbs_results.csv",
+    out_csv="gram8_plural_verbs_results.csv",
     out_dir="results_per_section",
     top_k=10
 )
