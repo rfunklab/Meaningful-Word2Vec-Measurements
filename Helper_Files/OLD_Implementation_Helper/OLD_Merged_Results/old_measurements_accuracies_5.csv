@@ -1,0 +1,6 @@
+measure,mean_avg_accuracy
+euclidean_distance,0.051951842393287054
+mahalanobis_cosine,0.15434148121123673
+mahalanobis_distance,0.062028456767603005
+mahalanobis_shifted_cosine,0.15461145567311196
+naive_cosine,0.14089748267055813
