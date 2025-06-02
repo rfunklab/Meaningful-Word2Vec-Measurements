@@ -5,9 +5,6 @@ gzip_to_csv.py
 Script to decompress gzipped CSV files back to regular CSV format.
 Reads .csv.gz files from 'Results_Per_Section' directory and saves 
 decompressed CSV files to 'Unzipped_Results_Per_Section' directory.
-
-Author: Ahmed Yasser Hassanein
-Date: 2025
 """
 
 import os
