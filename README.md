@@ -1,97 +1,295 @@
-# New-Word2Vec-Measurements
+# Meaningful-Word2Vec-Measurements
 
-This repository contains code for evaluating new measurement techniques in word embeddings, including:
+This repository contains comprehensive implementations for evaluating advanced measurement techniques in word embeddings, with a focus on developing transformation-invariant metrics for word analogy tasks. The project extends traditional Word2Vec evaluation by implementing and comparing multiple similarity measures, including novel Mahalanobis-based distance metrics.
 
-- Mahalanobis Cosine Similarity
-- Mahalanobis Shifted Cosine Similarity
-- Mahalanobis Distance
+## Repository Structure
 
-The implementation is based on replicating the methodology from Mikolov's Word2Vec Paper and extends it by testing these new distance metrics on analogy-based evaluations.
+```
+Meaningful-Word2Vec-Measurements/
+├── OLD_Implementation/                    
+│   ├── new_wordvec_measurements.py          
+│   ├── convert_gz_to_csv.py                 
+│   └── Results_Per_Section/              
+├── NEW_Implementation/                    
+│   ├── Covariance_Inverse/               
+│   └── Outer_Correlation/                
+├── Helper_Files/                          
+│   ├── OLD_Implementation_Helper/        
+│   └── NEW_Implementation/               
+│       ├── Covariance_Inverse/
+│       └── Outer_Correlation/
+└── README.md                                
+```
+
+## Directory Purposes
+
+### OLD_Implementation
+
+Contains the foundational implementation based on replicating and extending Mikolov's Word2Vec methodology. This serves as the baseline for comparison and includes:
+
+- Word analogy evaluation framework
+- Traditional and Mahalanobis-based similarity measures
+- Compressed result storage system
+- Data decompression utilities for exploration
+
+### NEW_Implementation
+
+Houses advanced implementations that build upon the baseline methods:
+
+- **Covariance_Inverse/**: Enhanced covariance matrix inversion techniques with improved numerical stability
+- **Outer_Correlation/**: Novel outer product correlation methods for embedding similarity
+
+### Helper_Files
+
+Supporting utilities and documentation for both implementation approaches:
+
+- CSV merging and manipulation tools
+- Result visualization and display utilities
+- Chunk processing methods for large-scale evaluations
+- Documentation and analysis notebooks
 
 ## Features
 
-- Downloads and processes the Google News Word2Vec model.
-- Parses and evaluates word analogy datasets.
-- Implements and compares multiple similarity measurements.
-- Builds covariance matrices and applies Mahalanobis transformations.
-- Saves detailed results in CSV format.
+- **Multiple Similarity Measures**: Implements naive cosine, Euclidean distance, and three Mahalanobis-based metrics
+- **Transformation-Invariant Metrics**: Addresses coordinate system dependencies in embedding measurements
+- **Comprehensive Evaluation**: Tests across 14 different analogy categories
+- **Scalable Processing**: Handles large vocabulary subsets with configurable parameters
+- **Compressed Storage**: Efficient .gz compression for result files
+- **Extensive Utilities**: Helper scripts for data manipulation and analysis
 
 ## Getting Started
 
-### Install Dependencies
+### Prerequisites
 
-Note: ```ace_tools_open``` is required for running the new_wordvec_measurement.py but is not included in requirements.txt. Please install it separately.
-
-Run the following command to install the required Python libraries:
+Install the required dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install gensim numpy pandas
 pip install ace_tools_open
 ```
 
-### Download the Word2Vec Model
+### Quick Start with OLD_Implementation
 
-The script will automatically download the Google News Word2Vec embeddings if not found.
-
-Alternatively, you can manually download it:
-```bash
-wget -O GoogleNews-vectors-negative300.bin.gz https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz
-```
-
-### Run the Evaluation
-
-To test the analogy tasks with the implemented distance measures, execute:
+1. Navigate to the baseline implementation:
 
 ```bash
-python new_word2vec_measurements.py
+cd OLD_Implementation/
 ```
 
-### Evaluation Metrics
+2. Run the main evaluation script:
 
-The script computes analogy accuracy using:
-- Naïve Cosine Similarity
-- Euclidean Distance
-- Mahalanobis Cosine Similarity
-- Mahalanobis Shifted Cosine Similarity
-- Mahalanobis Distance
+```bash
+python new_wordvec_measurements.py
+```
 
-It evaluates performance across multiple analogy categories and saves results to CSV files.
+This will:
+- Download the Google News Word2Vec model (if not present)
+- Evaluate analogies across all categories
+- Save compressed results to Results_Per_Section/
 
-### Outputs
+3. Decompress results for exploration:
 
-Results are saved (as .gz files) in the ```results_per_section/``` directory:
-
-- ```capital-common-countries```
-- ```capital-world```
-- ```currency```
-- ```city-in-state```
-- ```family```
-- ```gram1-adjective-to-adverb```
-- ```gram2-opposite```
-- ```gram3-comparative```
-- ```gram4-superlative```
-- ```gram5-present-participle```
-- ```gram6-nationality-adjective```
-- ```gram7-past-tense```
-- ```gram8-plural```
-- ```gram9-plural-verbs```
-
-To convert the .gz files to .csv files, please run the following line: 
 ```bash
 python convert_gz_to_csv.py
 ```
 
-Each csv file contains:
+This creates the Unzipped_Results_Per_Section/ directory with readable CSV files.
 
-| word1  | word2  | word3  | true_word  | candidate_1  | ...  | freq_subset  | rcond  | measure  | overall_accuracy  |
-|--------|--------|--------|------------|--------------|------|--------------|--------|----------|-------------------|
+### Data Exploration
 
+After running the decompression utility, you can explore the results:
 
-### Customizing Parameters
+```python
+import pandas as pd
 
-Modiy ```New_Word2Vec_Measurements.py``` to:
+# Load results for a specific category
+df = pd.read_csv('Unzipped_Results_Per_Section/family_results.csv')
 
-- Change the frequency subset of words used.
-- Adjust Mahalanobis inverse covariance matrix computation.
-- Select different similarity measures.
-  
+# Analyze accuracy by measure type
+accuracy_by_measure = df.groupby('measure')['overall_accuracy'].mean()
+print(accuracy_by_measure)
+```
+
+## Using convert_gz_to_csv.py
+
+The `convert_gz_to_csv.py` utility is essential for data exploration as it decompresses the gzipped CSV files generated by the main evaluation script.
+
+### Basic Usage
+
+```bash
+python convert_gz_to_csv.py
+```
+
+### Command Line Options
+
+```bash
+# Show what files would be processed (dry run)
+python convert_gz_to_csv.py --dry-run
+
+# Use custom source and output directories
+python convert_gz_to_csv.py --source "My_Results" --output "My_Unzipped_Results"
+
+# List contents of source directory
+python convert_gz_to_csv.py --list-source
+
+# List contents of output directory
+python convert_gz_to_csv.py --list-output
+```
+
+### Interactive Usage
+
+```python
+import convert_gz_to_csv as gzip_csv
+
+# See what gzipped files are available
+gzip_csv.list_directory_contents("Results_Per_Section")
+
+# Test what would happen without actually decompressing
+gzip_csv.process_gzipped_files(dry_run=True)
+
+# Actually decompress the files
+gzip_csv.process_gzipped_files()
+
+# Test that a specific decompressed file works correctly
+gzip_csv.test_csv_file("family_results.csv")
+```
+
+### Why Use This Tool
+
+1. **Verification**: The tool verifies that decompressed files match the original compressed content exactly
+2. **Safety**: Only creates CSV files after successful verification
+3. **Convenience**: Handles entire directories of compressed files automatically
+4. **Error Handling**: Provides clear feedback if any files fail to decompress properly
+
+## Similarity Measures Implemented
+
+1. **Naive Cosine Similarity**: Traditional cosine similarity
+2. **Euclidean Distance**: L2 norm distance metric
+3. **Mahalanobis Cosine**: Cosine similarity with covariance normalization
+4. **Mahalanobis Shifted Cosine**: Cosine similarity with mean-shifted vectors and covariance normalization
+5. **Mahalanobis Distance**: Distance metric using inverse covariance matrix
+
+## Result Format
+
+Each CSV file contains detailed analogy evaluation results:
+
+| Column | Description |
+|--------|-------------|
+| word1, word2, word3, true_word | Analogy components (word1:word2 :: word3:true_word) |
+| candidate_1 to candidate_10 | Top 10 predicted words |
+| freq_subset | Number of frequent words used for covariance computation |
+| rcond | Regularization parameter for pseudo-inverse |
+| measure | Similarity measure used |
+| overall_accuracy | Accuracy score for this configuration |
+
+## Advanced Usage
+
+For advanced implementations and additional utilities:
+
+- **Covariance-based methods**: Explore NEW_Implementation/Covariance_Inverse/
+- **Correlation methods**: Check NEW_Implementation/Outer_Correlation/
+- **Data processing utilities**: See Helper_Files/OLD_Implementation_Helper/ for:
+  - CSV merging across categories
+  - Result visualization tools
+  - Chunk-based processing methods
+  - Performance analysis scripts
+
+## Analogy Categories Evaluated
+
+The framework evaluates across these categories:
+
+**Semantic Categories:**
+- capital-common-countries
+- capital-world
+- currency
+- city-in-state
+- family
+
+**Syntactic Categories:**
+- gram1-adjective-to-adverb
+- gram2-opposite
+- gram3-comparative
+- gram4-superlative
+- gram5-present-participle
+- gram6-nationality-adjective
+- gram7-past-tense
+- gram8-plural
+- gram9-plural-verbs
+
+## Configuration
+
+Modify evaluation parameters in new_wordvec_measurements.py:
+
+```python
+freq_subs = [10000, 20000, 30000, 50000, 100000]  # Vocabulary subset sizes
+rc_vals = [0.001, 0.01, 0.02, 0.005]              # Regularization values  
+meas_types = ["naive_cosine", "mahalanobis_cosine", ...]  # Measures to test
+```
+
+## Helper Files Organization
+
+The Helper_Files directory contains additional utilities organized by implementation type:
+
+### Helper_Files/OLD_Implementation_Helper/
+
+Contains utilities for working with the baseline implementation results:
+
+- **CSV merging tools**: Combine results across different analogy categories
+- **Data visualization scripts**: Generate plots and charts for result analysis
+- **Chunk processing utilities**: Handle large-scale data processing efficiently
+- **Statistical analysis tools**: Compute significance tests and confidence intervals
+
+### Helper_Files/NEW_Implementation/
+
+Contains utilities for advanced implementation methods:
+
+- **Covariance_Inverse/**: Tools for enhanced covariance matrix methods
+- **Outer_Correlation/**: Utilities for outer product correlation approaches
+
+## Workflow Example
+
+Here's a typical workflow for using this repository:
+
+1. **Run baseline evaluation:**
+```bash
+cd OLD_Implementation/
+python new_wordvec_measurements.py
+```
+
+2. **Decompress results for analysis:**
+```bash
+python convert_gz_to_csv.py
+```
+
+3. **Explore specific category results:**
+```python
+import pandas as pd
+df = pd.read_csv('Unzipped_Results_Per_Section/family_results.csv')
+best_config = df.loc[df['overall_accuracy'].idxmax()]
+print(f"Best configuration: {best_config['measure']} with accuracy {best_config['overall_accuracy']:.4f}")
+```
+
+4. **Use helper utilities for advanced analysis:**
+```bash
+cd ../Helper_Files/OLD_Implementation_Helper/
+# Run additional analysis scripts
+```
+
+## Citation
+
+This work extends the methodology from:
+
+Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781.
+
+## Contributing
+
+When contributing to this repository, please ensure:
+
+1. New implementations follow the directory structure conventions
+2. All utilities include proper documentation and examples
+3. Results are properly compressed using the established .gz format
+4. Helper scripts are placed in the appropriate Helper_Files subdirectory
+
+---
+
+For detailed implementation notes, additional utilities, and advanced methods, please refer to the respective subdirectories and their documentation. The Helper_Files directories contain extensive utilities for data manipulation, visualization, and analysis that complement the main evaluation frameworks.
