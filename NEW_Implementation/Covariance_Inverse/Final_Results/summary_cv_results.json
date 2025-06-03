@@ -1,0 +1,840 @@
+{
+  "merge_info": {
+    "total_files_processed": 14,
+    "successful_files": 14,
+    "total_rows": 786444,
+    "unique_categories": 14,
+    "unique_measures": 3,
+    "unique_param_combinations": 18
+  },
+  "dataset_metadata": {
+    "capital_common_countries_results": {
+      "filename": "capital_common_countries_results.csv",
+      "rows": 30360,
+      "categories": [
+        "capital-common-countries"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523583,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.966403162055336,
+        1.0
+      ],
+      "mean_accuracy": 0.9916666666666667
+    },
+    "capital_world_results": {
+      "filename": "capital_world_results.csv",
+      "rows": 81768,
+      "categories": [
+        "capital-world"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.8987707881417208,
+        0.9833694866232828
+      ],
+      "mean_accuracy": 0.9551413755992568
+    },
+    "city_in_state_results": {
+      "filename": "city_in_state_results.csv",
+      "rows": 139800,
+      "categories": [
+        "city-in-state"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.9060085836909872,
+        0.9982832618025752
+      ],
+      "mean_accuracy": 0.9815879828326181
+    },
+    "currency_results": {
+      "filename": "currency_results.csv",
+      "rows": 7680,
+      "categories": [
+        "currency"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.4296875,
+        0.609375
+      ],
+      "mean_accuracy": 0.5330729166666667
+    },
+    "family_results": {
+      "filename": "family_results.csv",
+      "rows": 20520,
+      "categories": [
+        "family"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.8245614035087719,
+        1.0
+      ],
+      "mean_accuracy": 0.9585769980506823
+    },
+    "gram1_adjective_to_adverb_results": {
+      "filename": "gram1_adjective_to_adverb_results.csv",
+      "rows": 48720,
+      "categories": [
+        "gram1-adjective-to-adverb"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.3608374384236453,
+        0.7536945812807881
+      ],
+      "mean_accuracy": 0.5817118226600986
+    },
+    "gram2_opposite_results": {
+      "filename": "gram2_opposite_results.csv",
+      "rows": 22800,
+      "categories": [
+        "gram2-opposite"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523583,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.4710526315789474,
+        0.8078947368421052
+      ],
+      "mean_accuracy": 0.6725877192982456
+    },
+    "gram3_comparative_results": {
+      "filename": "gram3_comparative_results.csv",
+      "rows": 79920,
+      "categories": [
+        "gram3-comparative"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.9069069069069068,
+        0.9962462462462462
+      ],
+      "mean_accuracy": 0.9708833833833832
+    },
+    "gram4_superlative_results": {
+      "filename": "gram4_superlative_results.csv",
+      "rows": 38376,
+      "categories": [
+        "gram4-superlative"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.7749287749287749,
+        1.0
+      ],
+      "mean_accuracy": 0.9631540546174693
+    },
+    "gram5_present_participle_results": {
+      "filename": "gram5_present_participle_results.csv",
+      "rows": 52200,
+      "categories": [
+        "gram5-present-participle"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.8666666666666667,
+        0.9988505747126436
+      ],
+      "mean_accuracy": 0.9622413793103447
+    },
+    "gram6_nationality_adjective_results": {
+      "filename": "gram6_nationality_adjective_results.csv",
+      "rows": 73740,
+      "categories": [
+        "gram6-nationality-adjective"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.9650122050447518,
+        0.999186330349878
+      ],
+      "mean_accuracy": 0.9879983726606998
+    },
+    "gram7_past_tense_results": {
+      "filename": "gram7_past_tense_results.csv",
+      "rows": 88920,
+      "categories": [
+        "gram7-past-tense"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.7402159244264508,
+        0.9696356275303644
+      ],
+      "mean_accuracy": 0.9089068825910931
+    },
+    "gram8_plural_results": {
+      "filename": "gram8_plural_results.csv",
+      "rows": 59520,
+      "categories": [
+        "gram8-plural"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.9012096774193548,
+        0.9495967741935484
+      ],
+      "mean_accuracy": 0.9311827956989247
+    },
+    "gram9_plural_verbs_results": {
+      "filename": "gram9_plural_verbs_results.csv",
+      "rows": 42120,
+      "categories": [
+        "gram9-plural-verbs"
+      ],
+      "measures": [
+        "naive_cosine",
+        "mahalanobis_cosine",
+        "mahalanobis_shifted_cosine"
+      ],
+      "quantiles": [
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "rcond_values": [
+        0.0516864017866611,
+        0.0569051824523585,
+        0.0605962450895845,
+        0.0686540719955395,
+        0.0826811995261216
+      ],
+      "top_k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "accuracy_range": [
+        0.7464387464387464,
+        0.9943019943019944
+      ],
+      "mean_accuracy": 0.913366571699905
+    }
+  },
+  "validation_issues": [],
+  "performance_summary": {
+    "overall_accuracy_range": [
+      0.3608374384236453,
+      1.0
+    ],
+    "overall_accuracy_mean": 0.9221597469114142,
+    "overall_accuracy_std": 0.12400933285534108
+  },
+  "category_performance": {
+    "capital-common-countries": {
+      "count": 30360,
+      "mean": 0.9917,
+      "std": 0.009,
+      "min": 0.9664,
+      "max": 1.0
+    },
+    "capital-world": {
+      "count": 81768,
+      "mean": 0.9551,
+      "std": 0.0249,
+      "min": 0.8988,
+      "max": 0.9834
+    },
+    "city-in-state": {
+      "count": 139800,
+      "mean": 0.9816,
+      "std": 0.0188,
+      "min": 0.906,
+      "max": 0.9983
+    },
+    "currency": {
+      "count": 7680,
+      "mean": 0.5331,
+      "std": 0.0518,
+      "min": 0.4297,
+      "max": 0.6094
+    },
+    "family": {
+      "count": 20520,
+      "mean": 0.9586,
+      "std": 0.0518,
+      "min": 0.8246,
+      "max": 1.0
+    },
+    "gram1-adjective-to-adverb": {
+      "count": 48720,
+      "mean": 0.5817,
+      "std": 0.1191,
+      "min": 0.3608,
+      "max": 0.7537
+    },
+    "gram2-opposite": {
+      "count": 22800,
+      "mean": 0.6726,
+      "std": 0.106,
+      "min": 0.4711,
+      "max": 0.8079
+    },
+    "gram3-comparative": {
+      "count": 79920,
+      "mean": 0.9709,
+      "std": 0.028,
+      "min": 0.9069,
+      "max": 0.9962
+    },
+    "gram4-superlative": {
+      "count": 38376,
+      "mean": 0.9632,
+      "std": 0.0565,
+      "min": 0.7749,
+      "max": 1.0
+    },
+    "gram5-present-participle": {
+      "count": 52200,
+      "mean": 0.9622,
+      "std": 0.0475,
+      "min": 0.8667,
+      "max": 0.9989
+    },
+    "gram6-nationality-adjective": {
+      "count": 73740,
+      "mean": 0.988,
+      "std": 0.0102,
+      "min": 0.965,
+      "max": 0.9992
+    },
+    "gram7-past-tense": {
+      "count": 88920,
+      "mean": 0.9089,
+      "std": 0.0849,
+      "min": 0.7402,
+      "max": 0.9696
+    },
+    "gram8-plural": {
+      "count": 59520,
+      "mean": 0.9312,
+      "std": 0.0149,
+      "min": 0.9012,
+      "max": 0.9496
+    },
+    "gram9-plural-verbs": {
+      "count": 42120,
+      "mean": 0.9134,
+      "std": 0.0893,
+      "min": 0.7464,
+      "max": 0.9943
+    }
+  },
+  "measure_performance": {
+    "mahalanobis_cosine": {
+      "count": 262148,
+      "mean": 0.9208,
+      "std": 0.1274,
+      "min": 0.3608,
+      "max": 1.0
+    },
+    "mahalanobis_shifted_cosine": {
+      "count": 262148,
+      "mean": 0.9209,
+      "std": 0.1274,
+      "min": 0.3608,
+      "max": 1.0
+    },
+    "naive_cosine": {
+      "count": 262148,
+      "mean": 0.9248,
+      "std": 0.1169,
+      "min": 0.4249,
+      "max": 1.0
+    }
+  },
+  "category_type_performance": {
+    "semantic": {
+      "count": 280128,
+      "mean": 0.961,
+      "std": 0.0773,
+      "min": 0.4297,
+      "max": 1.0
+    },
+    "syntactic": {
+      "count": 506316,
+      "mean": 0.9007,
+      "std": 0.1389,
+      "min": 0.3608,
+      "max": 1.0
+    }
+  },
+  "top_parameter_combinations": [
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    },
+    {
+      "param_combination": "0.01_0.0516864017866611_naive_cosine",
+      "category": "capital-common-countries",
+      "measure": "naive_cosine",
+      "quantile": 0.01,
+      "rcond": 0.0516864017866611,
+      "overall_accuracy": 1.0
+    }
+  ]
+}
